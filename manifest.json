@@ -54,5 +54,14 @@
 			},
 			"description": "Switches to previously active tab"
 		}
-	}
+	},
+
+	"content_scripts": [
+        {
+          "css": ["css/aviso.css"],
+          "js": ["src/content_scripts/injection.js"],
+          "matches": ["http://*/*",    "https://*/*"],
+          "run": "document_end"
+        }
+      ]
 }
