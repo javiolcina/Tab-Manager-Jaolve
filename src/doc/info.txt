@@ -1,0 +1,14 @@
+Content script: tiene el poder de modificar el DOM
+Background script: usa el API de Chrome
+
+https://www.youtube.com/@TUTORIEX_
+
+
+
+Acciones:
+- Nueva acción en el Background escuchando 
+
+TODO 
+    - eliminar el duplicado de CSS 
+    - capacidad de mover el cuadro
+    - redefinir los colores

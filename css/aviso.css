@@ -1,48 +1,63 @@
 
 .flotant{
+  text-align: right;
+  
   width: 100%;
-  height:50PX;
-  --border:3px solid black;
-  top:0;
-  right:0;
+  height:100PX;
+  top:100px;
   position: absolute;
+
   >div{
-    resize:both;
-    margin-top: 5px; 
+    text-align: rigth;
+    margin-top: 15px; 
     margin-left: 5px;
+    margin-right: 150px;
     display: inline-block;
-    padding: 0 1rem;
+    padding: 4px 6px 4px 6px;
     font-size: 2rem;
     font-weight: 800;
-    opacity: 100%;
     border-radius: 5px;
-    width:90%;
     height:50PX;
-    max-width:100%;
-    max-height:50px;
-    min-height:50px;
-    overflow:hidden;
-    resize:both;
-    position:relative;
-    &:after{
-      font-family: sans-serif;
-      content:'Hola Mundo cruel';
-      color: orange; 
-      background-color: rgba(0, 0, 0, 0.5);
-      display:auto;
-      position: absolute;
-      top:0;
-      right:0;
-      width:auto;
-      height:auto;
-      
-      padding: 5px;
-      border-radius: 7px;
-      pointer-events:none;
-      visibility:visible;
-      background-position:center;
-      background-size:cover;
-      z-index: 2;
-    }
+
+    color: black; 
+    background-color: rgba(255,153,28,0.65);
+    font-family: monospace;
+    
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    width:auto;
+    height:auto;
+    z-index: 2147483647;
+
   }
+
+  /* Duplicated code from the popup.css */
+  .color1 { background-color: rgba(142, 166, 4, 0.25) !important; }
+  .color2 { background-color: rgba(245, 187, 0, 0.25) !important; }
+  .color3 { background-color: rgba(236, 159, 5, 0.25) !important; }
+  .color4 { background-color: rgba(215, 106, 3, 0.25) !important; }
+  .color5 { background-color: rgba(191, 49, 0, 0.25) !important; }
+  .color6 { background-color: rgba(251, 80, 18, 0.25) !important; }
+  .color7 { background-color: rgba(1, 253, 246, 0.25) !important; }
+  .color8 { background-color: rgba(233, 223, 0, 0.25) !important; }
+  .color9 { background-color: rgba(237, 234, 208, 0.25) !important; }
+  .color10 { background-color: rgba(3, 252, 186, 0.25) !important; }
+  .color11 { background-color: rgba(162, 102, 111, 0.25) !important; }
+  .color12 { background-color: rgba(244, 147, 144, 0.25) !important; }
+  .color13 { background-color: rgba(244, 88, 102, 0.25) !important; }
+  .color14 { background-color: rgba(196, 90, 179, 0.25) !important; }
+  .color15 { background-color: rgba(99, 26, 134, 0.25) !important; }
+  .color16 { background-color: rgba(58, 183, 149, 0.25) !important; }
+  .color17 { background-color: rgba(160, 232, 175, 0.25) !important; }
+  .color18 { background-color: rgba(134, 186, 161, 0.25) !important; }
+  .color19 { background-color: rgba(237, 234, 208, 0.25) !important; }
+  .color20 { background-color: rgba(255, 207, 86, 0.25) !important; }
+  .color21 { background-color: rgba(204, 251, 254, 0.25) !important; }
+  .color22 { background-color: rgba(205, 214, 221, 0.25) !important; }
+  .color23 { background-color: rgba(205, 202, 204, 0.25) !important; }
+  .color24 { background-color: rgba(205, 172, 161, 0.25) !important; }
+  .color25 { background-color: rgba(205, 137, 135, 0.25) !important; }
+  
+
+
 }

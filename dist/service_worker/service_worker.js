@@ -1083,6 +1083,7 @@
   var windowHashes = "windowHashes";
   var windowColors = "windowColors";
   var windowNames = "windowNames";
+  var get_window_name = "get_window_name";
 
   // src/helpers/utils.ts
   function debounce(func, wait, immediate = false) {
@@ -1548,6 +1549,8 @@
   }
   var updateTabCountDebounce = debounce(updateTabCount, 250);
   async function tabAdded(tab) {
+    console.log("tab added");
+    console.log(tab);
     const tabLimit = await getLocalStorage("tabLimit", 0);
     if (tabLimit > 0) {
       if (tab.id !== browser4.tabs.TAB_ID_NONE) {
@@ -1558,10 +1561,12 @@
       }
     }
     updateTabCountDebounce();
+    await sendWindowProperties(tab);     //jaolve
   }
-  function tabActiveChanged(tab) {
+  async function tabActiveChanged(tab) {
     trackLastTab(tab);
     updateTabCountDebounce();
+    await sendWindowProperties(tab);     //jaolve
   }
   async function checkTabCreate(tab) {
     await checkWindow(tab.windowId);
@@ -1688,8 +1693,50 @@
       case close_tabs:
         closeTabs(request.tabs);
         break;
+      case get_window_name:
+        //jaolve
+        console.log("get window name");
+        let names = await getLocalStorageMap(windowNames);
+        /*console.log(names);
+        console.log(sender);
+        console.log(sender.tab.windowId);
+        console.log(sender.tab.windowId);
+        console.log(names.get(sender.tab.windowId));*/
+        const name = names.get(sender.tab.windowId)
+        console.log(name);
+        sendResponse({windowName: name});
+        return;
+        break;
     }
   }
+
+  // jaolve
+  async function sendWindowProperties(tab) {
+
+    let names = await getLocalStorageMap(windowNames);
+    const name = names.get(tab.windowId);
+    console.log('windowName='+name);
+
+    let colors = await getLocalStorageMap(windowColors);
+    const color = colors.get(tab.windowId);
+    console.log('windowColor='+color);
+
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+      var activeTab = tabs[0];
+      console.log(activeTab);
+
+        chrome.tabs.sendMessage(activeTab.id, {
+          //command: "get_window_name",
+          windowName: name,
+          windowColor: color
+          //windowName: 'HOla'
+        });
+
+    });
+  }
+
+
+
   function handleCommands(command) {
     if (command === switch_to_previous_active_tab) {
       if (!!globalTabsActive && globalTabsActive.length > 1) {
