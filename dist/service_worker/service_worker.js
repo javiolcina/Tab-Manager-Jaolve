@@ -1508,6 +1508,8 @@
     await browser4.windows.update(windowId, { focused: true });
     await browser4.tabs.update(tabId, { active: true });
     await tabActiveChanged({ tabId, windowId });
+    await sendWindowProperties(tab);     //jaolve
+
   }
   async function updateTabCount() {
     let run = true;
@@ -1543,6 +1545,7 @@
     } else {
       await browser4.action.setBadgeText({ text: "" });
     }
+    
   }
   function tabCountChanged() {
     updateTabCountDebounce();
@@ -1570,6 +1573,7 @@
   }
   async function checkTabCreate(tab) {
     await checkWindow(tab.windowId);
+    await sendWindowProperties(tab);     //jaolve
   }
   async function checkTabUpdate(tabid, changeinfo, tab) {
     await checkWindow(tab.windowId);

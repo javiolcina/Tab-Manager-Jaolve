@@ -3,7 +3,7 @@
   text-align: right;
   
   width: 100%;
-  height:100PX;
+  height:0PX;
   top:100px;
   position: absolute;
 
@@ -30,7 +30,7 @@
     z-index: 2147483647;
 
   }
-
+}
   /* Duplicated code from the popup.css */
   .color1 { background-color: rgba(142, 166, 4, 0.25) !important; }
   .color2 { background-color: rgba(245, 187, 0, 0.25) !important; }
@@ -58,6 +58,3 @@
   .color24 { background-color: rgba(205, 172, 161, 0.25) !important; }
   .color25 { background-color: rgba(205, 137, 135, 0.25) !important; }
   
-
-
-}
