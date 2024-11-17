@@ -4,6 +4,12 @@
     var FLOTANT_DIV_ID = "flotatantDIV";
     var FLOTANT_DIV_CLASS = "flotant";
 
+    $( function() {
+        $( "#flotatantDIV" ).draggable({
+            cursor: "w-resize"
+          });
+      } );
+
     //Comunication with the background ////////////////////////////////////////////////////////////////
 
     /**
@@ -28,7 +34,7 @@
               }, (response) => {
                 console.log(response);
                 div1.style.backgroundColor = response.color;
-    });*/            
+    });     */       
     /////////////////////////////////////////////////////////////////////////////////////////////
 
    /**
@@ -74,5 +80,7 @@
     };
     
     void addDIVTicker();
+
+
 
 
