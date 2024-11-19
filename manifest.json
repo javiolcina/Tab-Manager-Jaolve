@@ -58,7 +58,7 @@
 
 	"content_scripts": [
         {
-          "css": ["css/aviso.css","css/popup.css"],
+          "css": ["css/aviso.css","css/windowColors.css"],
           "js": ["src/content_scripts/jquery.js","src/content_scripts/jqueryui.js","src/content_scripts/injection.js"],
           "matches": ["http://*/*",    "https://*/*"],
           "run": "document_end"

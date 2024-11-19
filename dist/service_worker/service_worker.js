@@ -1083,7 +1083,7 @@
   var windowHashes = "windowHashes";
   var windowColors = "windowColors";
   var windowNames = "windowNames";
-  var get_window_name = "get_window_name";
+  var get_windows_attributes = "get_windows_attributes";
 
   // src/helpers/utils.ts
   function debounce(func, wait, immediate = false) {
@@ -1697,9 +1697,11 @@
       case close_tabs:
         closeTabs(request.tabs);
         break;
-      case get_window_name:
+      case get_windows_attributes:
         //jaolve
         console.log("get window name");
+        console.log("sender"+sender);
+        console.log("sendResponse"+sendResponse);
         let names = await getLocalStorageMap(windowNames);
         /*console.log(names);
         console.log(sender);
@@ -1708,8 +1710,8 @@
         console.log(names.get(sender.tab.windowId));*/
         const name = names.get(sender.tab.windowId)
         console.log(name);
-        sendResponse({windowName: name});
-        return;
+        sendResponse({message: "Hola desde background"});
+        //return;
         break;
     }
   }
@@ -1730,10 +1732,8 @@
       console.log(activeTab);
 
         chrome.tabs.sendMessage(activeTab.id, {
-          //command: "get_window_name",
           windowName: name,
           windowColor: color
-          //windowName: 'HOla'
         });
 
     });

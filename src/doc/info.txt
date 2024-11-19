@@ -9,6 +9,5 @@ Acciones:
 - Nueva acción en el Background escuchando 
 
 TODO 
-    - eliminar el duplicado de CSS 
-    - capacidad de mover el cuadro
     - redefinir los colores
+    - que desde el primer momento se vea el cartel

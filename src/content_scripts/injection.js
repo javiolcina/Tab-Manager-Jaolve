@@ -30,11 +30,10 @@
 
     //Enviar un missatge al background per obtidre el nom de la finestra i el color
     /*chrome.runtime.sendMessage({
-            command: set_window_name
+        command: "get_windows_attributes"
               }, (response) => {
-                console.log(response);
-                div1.style.backgroundColor = response.color;
-    });     */       
+                console.log("resposta"+response);
+    });     */
     /////////////////////////////////////////////////////////////////////////////////////////////
 
    /**
@@ -42,7 +41,6 @@
     */ 
    const addDIVTicker = async () => {
 
-        var set_window_name = "get_window_name";
 
         var divFlotant = document.getElementById(FLOTANT_DIV_ID);
         //exists element id = flotatantDIV
